@@ -10,6 +10,11 @@ const port = 3000;
 //init app
 const app = express();
 
+const index = require('./routes/index');
+const articles = require('./routes/articles');
+const categories = require('./routes/categories');
+const manage = require('./routes/manage');
+
 //view Setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -30,11 +35,27 @@ app.use((req, res, next)  => {
 });
 
 //Express validator
+// app.use(expressValidator({
+//     errorFormatter: (param, msg, value) => {
+//         const namespace = param.split('.'),
+//         root = namespace.shift(),
+//         formParam = root;
 
+//         while(namespace.length){
+//             formParam += '[' + namespace.shift + ']';
+//         }
+//         return{
+//             param : formParam,
+//             msg : msg,
+//             value : value
+//         };
+//     }
+// }));
 
-app.get('/', (req, res) =>{
-    res.send('Hello');
-});
+app.use('/', index);
+app.use('/articles', articles);
+app.use('/categories', categories);
+app.use('/manage', manage);
 
 app.listen(port, () =>{
     console.log('Server started on port '+port);
