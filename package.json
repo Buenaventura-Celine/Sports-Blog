@@ -1,0 +1,31 @@
+{
+  "name": "sports-blog",
+  "version": "1.0.0",
+  "description": "Simple Blog that talks about sports",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Buenaventura-Celine/Sports-Blog.git"
+  },
+  "author": "Celine Joie V. Buenaventura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Buenaventura-Celine/Sports-Blog/issues"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "connect-flash": "*",
+    "express": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "^6.12.1",
+    "moment": "*",
+    "mongoose": "*",
+    "pug": "*"
+  },
+  "homepage": "https://github.com/Buenaventura-Celine/Sports-Blog#readme"
+}
