@@ -16,3 +16,8 @@ const Category = module.exports = mongoose.model('Category', categorySchema);
 module.exports.getCategories = function(callback, limit){
     Category.find(callback).limit(limit).sort([['title', 'ascending']]);
 }
+
+//Add Categiry
+module.exports.addCategory = function(category, callback){
+    Category.create(category, callback); 
+}
